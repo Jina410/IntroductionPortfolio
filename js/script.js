@@ -1,6 +1,38 @@
 
 
 $(function () {
+  //header
+  $(window).scroll(function () {
+    let st = $(window).scrollTop();
+    if (st > 1000) {
+      $("header").css("opacity", "0");
+    } else {
+      $("header").css("opacity", "1");
+    }
+  })
+
+  //해당 #으로 갈시 사이드메뉴 on
+  $(document).ready(function () {
+    const sections = $(".menu a").map(function () {
+      return $($(this).attr("href"));
+    });
+
+    $(window).on("scroll", function () {
+      let scrollPos = $(window).scrollTop() + $(window).height() / 2;
+
+      sections.each(function (index, section) {
+        let top = $(section).offset().top;
+        let bottom = top + $(section).outerHeight();
+
+        if (scrollPos >= top && scrollPos < bottom) {
+          $(".menu .dia").removeClass("on");
+          $(".menu a").eq(index).find(".dia").addClass("on");
+          return false;
+        }
+      });
+    });
+  });
+
   //저 이런것좀 합니다 skills
   $('#skills .skill-list .skill').click(function () {
     let index = $(this).index();
@@ -31,4 +63,25 @@ $(function () {
     let index = $(this).index();
     $('#works .project-wrap .project-item .more-text p').eq(index).toggleClass('hide');
   })
+
+  //etc 슬라이드
+  const imgSlide = document.querySelector("#works .etc .etc-box-wrap");
+
+  const clone = imgSlide.cloneNode(true);
+  document.querySelector("#works .wrap").appendChild(clone);
+  document.querySelector("#works .etc .etc-box-wrap").offsetWidth + "px";
+
+  imgSlide.classList.add("origin");
+  clone.classList.add("clone");
+
+  $(function () {
+    $("#works .wrap").on("mouseenter", function () {
+      $("#works .etc .etc-box-wrap").css("animation-play-state", "paused");
+    });
+
+    $("#works .wrap").on("mouseleave", function () {
+      $("#works .etc .etc-box-wrap").css("animation-play-state", "running");
+    });
+  });
+
 })

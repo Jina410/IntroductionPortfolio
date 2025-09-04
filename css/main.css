@@ -14,6 +14,50 @@ body {
   background-color: #f8c566;
 }
 
+/* sidemenu */
+.menu{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  top:50%; right: 0;
+  margin-right: 30px;
+}
+.menu a{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding:10px 5px ;
+}
+.menu a .dia{
+  border:1px solid #E0A847;
+  margin-left: 20px ;
+  width: 15px; height: 15px;
+  transform: rotate(45deg);
+
+  transition: .3s;
+}
+.menu a .dia.on{
+  border:1px solid #E0A847;
+  background-color: #E0A847;
+
+  transition: .3s;
+}
+.menu a .dia:hover:not(.on){
+  background-color: #e0a8477c;
+}
+.menu a span{
+  color:#E0A847;
+  font-weight: 500;
+  opacity: 0;
+  transition: .3s;
+  transform: translateX(50px);
+}
+.menu a:hover span{
+  opacity: 1;
+  transform: translate(0);
+}
+
 /*#intro .footsteps*/
 .footsteps {
   width: 400px;
@@ -70,7 +114,19 @@ body {
   width: 100%; min-width: 1280px; height: 1080px;
   overflow: hidden;
 }
-#intro .intro aside {
+header{
+  position: fixed;
+  left:50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  text-shadow: 0px 0px 10px #1a212b85;
+
+  transition: opacity 0.5s ease;
+}
+.off{
+  opacity: 0;
+}
+header aside {
   display: flex;
   justify-content: space-between;
   font-size: 20px;
@@ -299,7 +355,6 @@ body {
   animation: decomove 5s ease-in-out infinite;
 }
 
-
 @keyframes decomove {
   0%{transform: translateX(0px);}
   50%{transform: translateX(-40px);}
@@ -309,9 +364,10 @@ body {
 
 /*skills*/
 #skills{
-  width: 100%; height: 100%;
+  width: 100%; height: 100%; min-width: 1280px;
   position: relative;
   padding-bottom: 300px;
+  overflow: hidden;
 }
 #skills .title::before{
   position: absolute;
@@ -413,14 +469,54 @@ body {
   display: block;
 }
 
-/* works */
+
+#skills .deco-bg1{
+  position: absolute;
+  bottom:-500px; right: -600px;
+  z-index: -3;
+
+  animation: decomove 5s ease-in-out infinite;
+}
+
+
+/* works popup */
+.popup{
+  position: fixed;
+  z-index: 999;
+  top:0; left:0; bottom:0; right: 0;
+  background-color: #1f27337a;
+  overflow-y: auto;
+  display: none;
+}
+.popup .popup-wrap{
+  min-width: 600px; max-width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  margin:auto;
+  justify-content: center;
+  gap:50px;
+
+  padding:70px 0 ;
+}
+.popup .popup-wrap .img-box{
+  width: 568px; height: 319px;
+  overflow: hidden;
+}
+.popup .popup-wrap .img-box img{
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+/* works .web-project*/
 #works{
+  width: 100%; min-width: 1280px;
   background: linear-gradient(163.70595202709092deg, rgba(51, 46, 31,1) 0.5769231216545176%,rgba(50, 45, 31,1) 0.5769231216545176%,rgba(26, 33, 43,1) 46.552535126252494%,rgba(34, 40, 77,1) 95.69887899323653%);
 }
 #works .works-tilte{
   width:100%; min-width: 1280px; height: 152px;
   background: #ffa600;
   text-align: right;
+  box-shadow: 0 20px 20px rgba(0,0,0,0.2);
 }
 #works .works-tilte h1{
   position: relative;
@@ -448,9 +544,8 @@ body {
 }
 
 #works .project-wrap{
-  width: 100%; height: 644px;
+  width: 100%; height: 500px;
   position: relative;
-  padding-bottom: 124px;
 
   display: flex;
 
@@ -466,6 +561,9 @@ body {
   z-index: 4;
   cursor: pointer;
   user-select: none;
+}
+#works .project-wrap .arrow:hover img{
+  filter: brightness(100);
 }
 #works .project-wrap .arrow img{
   width: 34px;
@@ -485,7 +583,7 @@ body {
 #works .project-wrap .project-item .top .viewport{
   width: 615px; height: 346px;
   overflow: auto;
-  scrollbar-color: #1F2733 #FFA600;
+  scrollbar-color: #1F2733 #FFA600 ;
 }
 #works .project-wrap .project-item .top .viewport img{
   width: 100%;
@@ -510,6 +608,12 @@ body {
   font-size: 20px;
   padding: 5px 28px;
   background-color: #ffa600;
+
+  transition: .3s;
+}
+#works .project-wrap .project-item .top .viewport-right .viewport-btn button:hover{
+  background-color: #ffffff;
+
 }
 #works .project-wrap .project-item .more-text{
   width: 1014px;
@@ -531,6 +635,7 @@ body {
   margin-left:7px;
 }
 #works .project-wrap .project-item .more-text p{
+  width: 100%;
   height: 100px;
   color: #E0A847;
   margin-left:30px; 
@@ -540,4 +645,106 @@ body {
 }
 #works .project-wrap .project-item .more-text p.hide{
   height: 0;
+}
+
+/* works .Multimedia */
+#works .Multimedia{
+  margin-bottom: 170px;
+}
+#works .Multimedia > h1{
+  font:bold 48px "Pretendard";
+  color:#e0a847;
+  text-align: center;
+  margin:107px 0;
+}
+#works .Multimedia .box-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap:102px 87px;
+}
+#works .Multimedia .box-wrap .box{
+  width: 535px; height: 301px;
+  cursor: pointer;
+}
+#works .Multimedia .box-wrap .box img{
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+#works .Multimedia .box-wrap .box p{
+  text-align: center;
+  margin-top: 22px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* works .etc */
+#works .etc{
+  height: 1000px;
+  overflow: hidden;
+}
+#works .etc > h1{
+  font:bold 48px "Pretendard";
+  color:#e0a847;
+  text-align: center;
+  margin:107px 0;
+}
+#works .wrap{
+  display: flex;
+  flex-direction: row;
+}
+#works .etc .etc-box-wrap{
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+}
+#works .etc .etc-box-wrap.origin{
+  animation: etcSlideMoveOrigin 40s linear infinite;
+}
+#works .etc .etc-box-wrap.clone{
+  animation: etcSlideMoveClone 40s linear infinite;
+}
+
+@keyframes etcSlideMoveOrigin{
+  0%{transform: translateX(0%);}
+  50%{transform: translateX(-100%);}
+  50.01%{transform: translateX(100%);}
+  100%{transform: translateX(0%);}
+}
+@keyframes etcSlideMoveClone{
+  0%{transform: translateX(0%);}
+  100%{transform: translateX(-200%);}
+}
+
+
+#works .etc .etc-box-wrap .img-box{
+  width: 490px; height: 412px;
+  margin-left:50px;
+  overflow: hidden;
+  transition: .3s;
+}
+#works .etc .etc-box-wrap .img-box:hover{
+  width: 653px; height: 549px;
+  object-position: center;
+  box-shadow: 0 0 40px #1A212B;
+}
+#works .etc .etc-box-wrap .img-box img{
+  width: 100%; height: 100%;
+}
+
+/* #footer */
+#footer{
+  width: 100%; height: 260px;
+  background-color: #FFA600;
+  color:#000000;
+  text-align: center;
+  padding-top:110px;
+}
+#footer h3{
+  font: bold 18px "Pretendard";
+  margin-bottom: 6px;
+}
+#footer p{
+  font: 400 16px "Pretendard";
 }

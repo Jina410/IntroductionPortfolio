@@ -12,6 +12,32 @@
 </head>
 
 <body>
+  <!--사이드고정메뉴-->
+  <nav class="menu">
+    <a href="#intro">
+      <span>INTRO</span><div class="dia on"></div>
+    </a>
+    <a href="#profile">
+      <span>ABOUT</span><div class="dia"></div>
+    </a>
+    <a href="#skills">
+      <span>SKILL</span><div class="dia"></div>
+    </a>
+    <a href="#works">
+      <span>WORKS</span><div class="dia"></div>
+    </a>
+  </nav>
+  <!--aside-->
+  <header>
+    <div class="container">
+      <aside>
+        <p>DESIGN</p>
+        <p>PORTFOLIO</p>
+        <p>KIM JINA</p>
+      </aside>
+    </div>
+  </header>
+  
   <main>
     <!--#intro-->
     <section id="intro">
@@ -41,11 +67,6 @@
       </div>
       <div class="container">
         <div class="intro">
-          <aside>
-            <p>DESIGN</p>
-            <p>PORTFOLIO</p>
-            <p>KIM JINA</p>
-          </aside>
           <div class="title">
             <h1>지나가는 순간을 디자인하는<br><b>김지나</b>입니다</h1>
             <p>트렌드는 언제나 지나가지만, 그 흐름 속에서 나만의 색을 발견하고 입힙니다.<br>
@@ -242,6 +263,7 @@
           </div>
         </div>
       </div>
+      <img class="deco-bg1" src="img/illust/deco-bg.png"></img>
     </section>
     <!--#skills END-->
 
@@ -252,13 +274,13 @@
           <h1><b>작업물</b> WORKS</h1>
         </div>
       </div>
+      <!--.web-project-->
       <div class="container">
-        <!--.web-project-->
         <div class="web-project">
           <h1>Web Project</h1>
-          <div class="project-wrap">
-            <div class="arrow"><img src="img/icon/works-web-projet-arrow.png" alt="웹프로젝트 화살표"></div>
-            <div class="project-item">
+          <ul class="project-wrap">
+            <li class="arrow"><img src="img/icon/works-web-projet-arrow.png" alt="웹프로젝트 화살표"></li>
+            <li class="project-item">
               <div class="top">
                 <div class="viewport"><img src="img/imgs/web-popol01.png" alt="포폴이미지미리보기1"></div>
                 <div class="viewport-right">
@@ -280,8 +302,8 @@
                   모르다. 준다 도
                   경기장으로 소프트웨어는 대통령도 누이자 있다.</p>
               </div>
-            </div>
-            <div class="project-item">
+            </li>
+            <li class="project-item">
               <div class="top">
                 <div class="viewport"><img src="img/imgs/web-popol01.png" alt="포폴이미지미리보기1"></div>
                 <div class="viewport-right">
@@ -303,19 +325,84 @@
                   모르다. 준다 도
                   경기장으로 소프트웨어는 대통령도 누이자 있다.</p>
               </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
         <!--.web-project END-->
 
-        <!--.web-project-->
+        <div class="popup">
+          <div class="popup-wrap">
+            <div class="img-box">
+            <img src="img/imgs/dummy.jpg">
+            </div>
+            <div class="img-box">
+            <img src="img/imgs/dummy.jpg">
+            </div>
+            <div class="img-box">
+            <img src="img/imgs/dummy.jpg">
+            </div>
+            <div class="img-box">
+            <img src="img/imgs/dummy.jpg">
+            </div>
+          </div>
+        </div>
+        <!--.Multimedia-->
         <div class="Multimedia">
-          <h1>Web Project</h1>
+          <h1>Multimedia</h1>
           <div class="multi-wrap">
             <div class="item"><img src=""></div>
           </div>
+          <ul class="box-wrap">
+            <li class="box">
+              <img src="img/imgs/dummy.jpg" alt="더미">
+              <p>섬네일 제작</p>
+            </li>
+            <li class="box">
+              <img src="img/imgs/dummy.jpg" alt="더미">
+              <p>OAP 제작</p>
+            </li>
+            <li class="box">
+              <img src="img/imgs/dummy.jpg" alt="더미">
+              <p>로고 제작</p>
+            </li>
+            <li class="box">
+              <img src="img/imgs/dummy.jpg" alt="더미">
+              <p>매쉬업 영상콘텐츠 제작</p>
+            </li>
+          </ul>
+        </div>
+        <!--.Multimedia END-->
+      </div>
+      <!--.etc-->
+      <div class="etc">
+        <h1>etc.</h1>
+        <div class="wrap">
+          <ul class="etc-box-wrap origin">
+            <li class="img-box">
+              <img src="img/imgs/dummy.jpg" alt="더미">
+            </li>
+            <div class="img-box">
+              <img src="img/imgs/dummy.jpg" alt="더미">
+            </div>
+            <div class="img-box">
+              <img src="img/imgs/dummy.jpg" alt="더미">
+            </div>
+            <div class="img-box">
+              <img src="img/imgs/dummy.jpg" alt="더미">
+            </div>
+            <div class="img-box">
+              <img src="img/imgs/dummy.jpg" alt="더미">
+            </div>
+          </ul>
         </div>
       </div>
+      <!--.etc END-->
+      <!--#works END-->
+
+      <footer id="footer">
+        <h3>Thank You</h3>
+        <p>© 2025 KimJina. All rights reserved.</p>
+      </footer>
 
     </section>
   </main>
