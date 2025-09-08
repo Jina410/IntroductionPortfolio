@@ -62,9 +62,9 @@ body {
 .footsteps {
   width: 400px;
   position: absolute;
-  top:30px; left: 0;
+  top:20px; left: 0;
   height: 200px;
-  transform: rotate(22deg);
+  transform: rotate(20deg);
   z-index: 0;
 }
 .foot {
@@ -111,7 +111,7 @@ body {
 /*#intro start*/
 #intro {
   position: relative;
-  width: 100%; min-width: 1280px; height: 1080px;
+  width: 100%; min-width: 1280px; height: 940px;
   overflow: hidden;
 }
 header{
@@ -159,13 +159,14 @@ header aside {
   font-weight: bold;
 }
 #intro .intro .title p {
-  color: #f8f8f8;
+  color: #e7e7e7;
   font-size: 20px;
   font-weight: 400;
 
   transform: translateX(-100px);
   opacity: 0;
   animation: moving 1s ease-out .8s forwards ;
+  margin-top:30px;
 }
 
 
@@ -209,6 +210,8 @@ header aside {
 
 /*#profile*/
 #profile{
+  padding-top:80px;
+  padding-bottom: 56px;
   width: 100%; height: 100%;
   position: relative;
 }
@@ -216,7 +219,7 @@ header aside {
   position: absolute;
   top:-25px; left: 10px;
   content: "";
-  width: 19px; height: 19px;
+  width: 17px; height: 17px;
   background-color: #ffa600;
   transform: rotate(45deg);
 }
@@ -225,17 +228,15 @@ header aside {
   width: 100%;
   display: flex;
   align-items: flex-end;
-  margin-top: 140px;
-  margin-bottom: 60px;
 }
 #profile .title h1{
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   color: #ffa600;
   margin-right: 15px;
 }
 #profile .title h2{
-  font: 600 30px 'Pretendard';
+  font: 600 26px 'Pretendard';
   color: #827b67;
 }
 
@@ -244,31 +245,53 @@ header aside {
   display: flex;
   justify-content: center;
   gap:100px;
-  margin: 140px 0;
+  margin: 150px 0;
 }
 #profile .profile-wrap .left .my-info{
+  position: relative;
   display: flex;
   align-items: center;
   gap:31px;
 }
 #profile .profile-wrap .left .my-info .photo{
-  width: fit-content; height: fit-content;
+  width: 216px; height: 216px;
   border-radius: 50%;
   border:8px solid transparent;
   border-radius:50%;
   background-image:linear-gradient(45deg,#E0A847, #1F4171);
   background-origin: border-box;
-  box-shadow: -5px 5px 20px #23549983;
   overflow: hidden;
+  
+  transform: rotate(0deg);
 }
-#profile .profile-wrap .left .my-info .photo img{
+#profile .profile-wrap .left .my-info .photo.rotate{
+  animation: profileRotate 1.5s ease-out;
+}
+#profile .profile-wrap .left .my-info .photo.infinite{
+  animation: profileRotate 5s linear 1.5s infinite;
+}
+@keyframes profileRotate{
+  100%{transform:rotate(360deg)};
+}
+
+#profile .profile-wrap .left .my-info .none-shadow {
+  position: absolute;
+  border-radius: 50%;
+  width: 216px; height: 216px;
+  box-shadow: -5px 5px 20px #23549983;
+}
+#profile .profile-wrap .left .my-info img{
+  position: absolute;
+  left:8px; top:8px; 
+  border-radius: 50%;
+  border:1px solid rgba(255, 255, 255, 0.3);
   object-fit: center/cover;
   display: block;
 }
 #profile .profile-wrap .left .my-info .text h3{
   color:#E0A847;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 20px;
 }
 #profile .profile-wrap .left .my-info .text > p{
   font-size: 16px;
@@ -283,7 +306,7 @@ header aside {
 #profile .profile-wrap .line{
   border-right:1px solid #fefefe;
   align-self: stretch;
-  margin: -77px 0 ;
+  margin: -60px 0 ;
 }
 #profile .profile-wrap .rigth{
   display: flex;
@@ -309,14 +332,13 @@ header aside {
   width: 100%; min-width: 1280px;
   display: flex;
   flex-direction: column;
-  gap:24px;
+  gap:5px;
   color: #E0A847;
-  font:bold 60px "Pretendard";
+  font:bold 30px "Pretendard";
   white-space: nowrap;
   overflow: hidden;
 
   user-select: none;
-  padding-top: 80px;
 }
 #profile .keyword span{
   opacity: 0.6;
@@ -366,14 +388,14 @@ header aside {
 #skills{
   width: 100%; height: 100%; min-width: 1280px;
   position: relative;
-  padding-bottom: 300px;
+  padding-bottom: 200px;
   overflow: hidden;
 }
 #skills .title::before{
   position: absolute;
   top:-25px; left: 10px;
   content: "";
-  width: 19px; height: 19px;
+  width: 17px; height: 17px;
   background-color: #ffa600;
   transform: rotate(45deg);
 }
@@ -382,17 +404,17 @@ header aside {
   width: 100%;
   display: flex;
   align-items: flex-end;
-  margin-top: 140px;
+  margin-top: 80px;
   margin-bottom: 60px;
 }
 #skills .title h1{
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   color: #ffa600;
   margin-right: 15px;
 }
 #skills .title h2{
-  font: 600 30px 'Pretendard';
+  font: 600 26px 'Pretendard';
   color: #827b67;
 }
 
@@ -400,23 +422,23 @@ header aside {
   width: 100%; height: 100%;
   display: flex;
   justify-content: center;
-  margin: 140px 0;
+  margin: 100px 0;
 }
 
+#skills .skill-list .skill h1{
+  color:#fefefe;
+  font:300 20px "Pretendard";
+}
+#skills .skill-list .skill h1 b{
+  font:bold 44px "Pretendard";
+  margin-right: 23px;
+}
 #skills .skill-list .skill:hover h1{
   color:#E0A847;
   cursor: pointer;
   user-select: none;
 
   transition: .2s;
-}
-#skills .skill-list .skill h1{
-  color:#fefefe;
-  font:300 22px "Pretendard";
-}
-#skills .skill-list .skill h1 b{
-  font:bold 64px "Pretendard";
-  margin-right: 23px;
 }
 #skills .skill-list .skill .skillpro{
   height: 0;
@@ -429,10 +451,12 @@ header aside {
   transition: height 0.4s ease-in-out;
 }
 #skills .skill-list .skill h1.on {
+  width: 270px;
   color: #e0a847;
+  font-weight: 500;
 }
 #skills .skill-list .skill .skillpro.on {
-  height: 200px;
+  height: 90px;
 }
 
 #skills .skills-wrap .line{
@@ -456,18 +480,22 @@ header aside {
 #skills .view .overlay .text{
   position: absolute;
   bottom:0;
-  padding:55px;
+  padding:35px;
   color:#ffffff;
   font-size: 20px;
 }
 #skills .view .overlay .text h1{
-  font-size: 35px;
-  margin-bottom: 20px;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+#skills .view .overlay .text p{
+  font-size: 16px;
 }
 #skills .view .skill-vd{
-  width: 733px; height: 1000;
+  width: 547px; height: 750px;
   display: block;
 }
+
 
 
 #skills .deco-bg1{
@@ -481,12 +509,19 @@ header aside {
 
 /* works popup */
 .popup{
-  position: fixed;
-  z-index: 999;
-  top:0; left:0; bottom:0; right: 0;
+  position: fixed; inset:0; z-index: 999;
   background-color: #1f27337a;
   overflow-y: auto;
   display: none;
+}
+.popup .popup-top{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin:10px 0;
+}
+.popup .popup-top > img {
+  cursor: pointer;
 }
 .popup .popup-wrap{
   min-width: 600px; max-width: 70%;
@@ -495,8 +530,6 @@ header aside {
   margin:auto;
   justify-content: center;
   gap:50px;
-
-  padding:70px 0 ;
 }
 .popup .popup-wrap .img-box{
   width: 568px; height: 319px;
@@ -513,19 +546,19 @@ header aside {
   background: linear-gradient(163.70595202709092deg, rgba(51, 46, 31,1) 0.5769231216545176%,rgba(50, 45, 31,1) 0.5769231216545176%,rgba(26, 33, 43,1) 46.552535126252494%,rgba(34, 40, 77,1) 95.69887899323653%);
 }
 #works .works-tilte{
-  width:100%; min-width: 1280px; height: 152px;
+  width:100%; min-width: 1280px; height: 100px;
   background: #ffa600;
   text-align: right;
   box-shadow: 0 20px 20px rgba(0,0,0,0.2);
 }
 #works .works-tilte h1{
   position: relative;
-  font:bold 30px "Pretendard";
+  font:bold 25px "Pretendard";
   color:#40464f;
-  line-height: 152px;
+  line-height: 110px;
 }
 #works .works-tilte b{
-  font:bold 50px "Noto Sans KR";
+  font:bold 40px "Noto Sans KR";
   color:#1f2733;
 }
 #works .works-tilte h1::before{
@@ -537,7 +570,7 @@ header aside {
   transform: rotate(45deg);
 }
 #works .web-project > h1{
-  font:bold 48px "Pretendard";
+  font:bold 42px "Pretendard";
   color:#e0a847;
   text-align: center;
   margin:107px 0;
@@ -598,6 +631,7 @@ header aside {
   font-weight: bold;
 }
 #works .project-wrap .project-item .top .viewport-right{
+  width: 390px;
   transform: translateX(50px);
 }
 #works .project-wrap .project-item .top .viewport-right .viewport-btn button{
@@ -618,6 +652,7 @@ header aside {
 #works .project-wrap .project-item .more-text{
   width: 1014px;
   color:#ffa600;
+  display: none;
 }
 #works .project-wrap .project-item .more-text div{
   width: fit-content;
@@ -652,7 +687,7 @@ header aside {
   margin-bottom: 170px;
 }
 #works .Multimedia > h1{
-  font:bold 48px "Pretendard";
+  font:bold 42px "Pretendard";
   color:#e0a847;
   text-align: center;
   margin:107px 0;
@@ -662,7 +697,7 @@ header aside {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap:102px 87px;
+  gap:77px 30px;
 }
 #works .Multimedia .box-wrap .box{
   width: 535px; height: 301px;
@@ -674,18 +709,18 @@ header aside {
 }
 #works .Multimedia .box-wrap .box p{
   text-align: center;
-  margin-top: 22px;
+  margin-top: 5px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 /* works .etc */
 #works .etc{
-  height: 1000px;
+  height: 850px;
   overflow: hidden;
 }
 #works .etc > h1{
-  font:bold 48px "Pretendard";
+  font:bold 42px "Pretendard";
   color:#e0a847;
   text-align: center;
   margin:107px 0;
@@ -719,14 +754,13 @@ header aside {
 
 
 #works .etc .etc-box-wrap .img-box{
-  width: 490px; height: 412px;
-  margin-left:50px;
+  width: 390px; height: 328px;
+  margin-left:30px;
   overflow: hidden;
   transition: .3s;
 }
 #works .etc .etc-box-wrap .img-box:hover{
-  width: 653px; height: 549px;
-  object-position: center;
+  transform: scale(1.2);
   box-shadow: 0 0 40px #1A212B;
 }
 #works .etc .etc-box-wrap .img-box img{
@@ -735,11 +769,11 @@ header aside {
 
 /* #footer */
 #footer{
-  width: 100%; height: 260px;
+  width: 100%; height: 180px;
   background-color: #FFA600;
   color:#000000;
   text-align: center;
-  padding-top:110px;
+  padding-top:75px;
 }
 #footer h3{
   font: bold 18px "Pretendard";

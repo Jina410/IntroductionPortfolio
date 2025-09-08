@@ -33,6 +33,34 @@ $(function () {
     });
   });
 
+  //저는 이런사람입니다 aboutme 해당 스크롤에 오면 .photo.rotate @profileRotate재생
+  $(window).on("scroll", function () {
+    let scrollTop = $(window).scrollTop(); //스크롤 세로top값 취득
+
+    let wh = $(window).height(); //요소의 높이
+
+    let tOffset = $("#profile").offset().top; //#profile의 top위치
+    let tHeight = $("#profile").outerHeight(); //#profile의 border,margin을 포함한 높이
+
+    if (scrollTop + wh > tOffset + 100 && scrollTop < tOffset + tHeight - 100) {
+      //스크롤세로top값+요소의 높이 > #profile && 스크롤세로top값 < #profile + #profile 높이
+      //화면에 아래쪽위치가 #profile보다 크다 && 화면의 위쪽위치가 #profile의 맨아래보다 위에 있다
+      //화면(브라우저)이 #profile겹치는 구간이 있는 동안
+      let $photo = $('.photo');
+
+      if (!$photo.hasClass("rotate")) { // .photo에 rotate가 없으면 true
+        $photo.addClass("rotate");
+
+        $photo.on("animationend", function () { // css 애니메이션(.rotate)이 끝났을 때
+          $photo.removeClass("rotate").addClass("infinite");
+        });
+      }
+    } else {
+      $('.photo').removeClass('rotate');
+      $('.photo').removeClass('infinite');
+    }
+  })
+
   //저 이런것좀 합니다 skills
   $('#skills .skill-list .skill').click(function () {
     let index = $(this).index();
