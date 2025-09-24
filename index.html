@@ -6,8 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="css/lightbox.css" rel="stylesheet">
   <link href="css/reset.css" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/lightbox.js"></script>
   <script src="js/script.js"></script>
 </head>
 
@@ -15,16 +19,20 @@
   <!--사이드고정메뉴-->
   <nav class="menu">
     <a href="#intro">
-      <span>INTRO</span><div class="dia on"></div>
+      <span>INTRO</span>
+      <div class="dia on"></div>
     </a>
     <a href="#profile">
-      <span>ABOUT</span><div class="dia"></div>
+      <span>ABOUT</span>
+      <div class="dia"></div>
     </a>
     <a href="#skills">
-      <span>SKILL</span><div class="dia"></div>
+      <span>SKILL</span>
+      <div class="dia"></div>
     </a>
     <a href="#works">
-      <span>WORKS</span><div class="dia"></div>
+      <span>WORKS</span>
+      <div class="dia"></div>
     </a>
   </nav>
   <!--aside-->
@@ -37,7 +45,7 @@
       </aside>
     </div>
   </header>
-  
+
   <main>
     <!--#intro-->
     <section id="intro">
@@ -74,72 +82,72 @@
           </div>
         </div>
       </div>
-    </section>
-    <!--#intro END-->
-
-    <!--#programs-->
-    <section id="programs">
-      <div class="inner">
-        <div class="programs">
-          <div class=items><img src="img/icon/illustrator-icon.png" alt="일러스트레이터" width="52" height="52">
-            <p>Illustrator</p>
-          </div>
-          <div class=items><img src="img/icon/photoshop-icon.png" alt="포토샵" width="52" height="52">
-            <p>Photoshop</p>
-          </div>
-          <div class=items><img src="img/icon/after-effects-icon.png" alt="에프터이펙트" width="52" height="52">
-            <p>After effect</p>
-          </div>
-          <div class=items><img src="img/icon/premiere-pro-icon.png" alt="프리미어프로" width="52" height="52">
-            <p>Premiere pro</p>
-          </div>
-          <div class=items><img src="img/icon/HTML-icon.png" alt="HTML" width="52" height="52">
-            <p>HTML</p>
-          </div>
-          <div class=items><img src="img/icon/css-icon.png" alt="CSS" width="52" height="52">
-            <p>CSS</p>
-          </div>
-          <div class=items><img src="img/icon/js-icon.png" alt="js" width="52" height="52">
-            <p>JavaScript</p>
-          </div>
-          <div class=items><img src="img/icon/figma-icon.png" alt="Figma" width="52" height="52">
-            <p>Figma</p>
-          </div>
-          <div class=items><img src="img/icon/clip-studio-paint-logo-icon.png" alt="Figma" width="52" height="52">
-            <p>Clip studio paint</p>
-          </div>
-          <!--clone-->
-          <div class=items><img src="img/icon/illustrator-icon.png" alt="일러스트레이터" width="52" height="52">
-            <p>Illustrator</p>
-          </div>
-          <div class=items><img src="img/icon/photoshop-icon.png" alt="포토샵" width="52" height="52">
-            <p>Photoshop</p>
-          </div>
-          <div class=items><img src="img/icon/after-effects-icon.png" alt="에프터이펙트" width="52" height="52">
-            <p>After effect</p>
-          </div>
-          <div class=items><img src="img/icon/premiere-pro-icon.png" alt="프리미어프로" width="52" height="52">
-            <p>Premiere pro</p>
-          </div>
-          <div class=items><img src="img/icon/HTML-icon.png" alt="HTML" width="52" height="52">
-            <p>HTML</p>
-          </div>
-          <div class=items><img src="img/icon/css-icon.png" alt="CSS" width="52" height="52">
-            <p>CSS</p>
-          </div>
-          <div class=items><img src="img/icon/js-icon.png" alt="js" width="52" height="52">
-            <p>JavaScript</p>
-          </div>
-          <div class=items><img src="img/icon/figma-icon.png" alt="Figma" width="52" height="52">
-            <p>Figma</p>
-          </div>
-          <div class=items><img src="img/icon/clip-studio-paint-logo-icon.png" alt="Figma" width="52" height="52">
-            <p>Clip studio paint</p>
+      <!--#programs-->
+      <div id="programs">
+        <div class="inner">
+          <div class="programs">
+            <div class=items><img src="img/icon/illustrator-icon.png" alt="일러스트레이터" width="52" height="52">
+              <p>Illustrator</p>
+            </div>
+            <div class=items><img src="img/icon/photoshop-icon.png" alt="포토샵" width="52" height="52">
+              <p>Photoshop</p>
+            </div>
+            <div class=items><img src="img/icon/after-effects-icon.png" alt="에프터이펙트" width="52" height="52">
+              <p>After effect</p>
+            </div>
+            <div class=items><img src="img/icon/premiere-pro-icon.png" alt="프리미어프로" width="52" height="52">
+              <p>Premiere pro</p>
+            </div>
+            <div class=items><img src="img/icon/HTML-icon.png" alt="HTML" width="52" height="52">
+              <p>HTML</p>
+            </div>
+            <div class=items><img src="img/icon/css-icon.png" alt="CSS" width="52" height="52">
+              <p>CSS</p>
+            </div>
+            <div class=items><img src="img/icon/js-icon.png" alt="js" width="52" height="52">
+              <p>JavaScript</p>
+            </div>
+            <div class=items><img src="img/icon/figma-icon.png" alt="Figma" width="52" height="52">
+              <p>Figma</p>
+            </div>
+            <div class=items><img src="img/icon/clip-studio-paint-logo-icon.png" alt="clipstudio" width="52" height="52">
+              <p>Clip studio paint</p>
+            </div>
+            <!--clone-->
+            <div class=items><img src="img/icon/illustrator-icon.png" alt="일러스트레이터" width="52" height="52">
+              <p>Illustrator</p>
+            </div>
+            <div class=items><img src="img/icon/photoshop-icon.png" alt="포토샵" width="52" height="52">
+              <p>Photoshop</p>
+            </div>
+            <div class=items><img src="img/icon/after-effects-icon.png" alt="에프터이펙트" width="52" height="52">
+              <p>After effect</p>
+            </div>
+            <div class=items><img src="img/icon/premiere-pro-icon.png" alt="프리미어프로" width="52" height="52">
+              <p>Premiere pro</p>
+            </div>
+            <div class=items><img src="img/icon/HTML-icon.png" alt="HTML" width="52" height="52">
+              <p>HTML</p>
+            </div>
+            <div class=items><img src="img/icon/css-icon.png" alt="CSS" width="52" height="52">
+              <p>CSS</p>
+            </div>
+            <div class=items><img src="img/icon/js-icon.png" alt="js" width="52" height="52">
+              <p>JavaScript</p>
+            </div>
+            <div class=items><img src="img/icon/figma-icon.png" alt="Figma" width="52" height="52">
+              <p>Figma</p>
+            </div>
+            <div class=items><img src="img/icon/clip-studio-paint-logo-icon.png" alt="clipstudio" width="52" height="52">
+              <p>Clip studio paint</p>
+            </div>
           </div>
         </div>
       </div>
+      <!--#programs END-->
     </section>
-    <!--#programs END-->
+    <!--#intro END-->
+
 
     <!--#profile-->
     <section id="profile">
@@ -164,7 +172,7 @@
             <p>디자인과 코드의 경계에서 작업하는 크리에이터</p>
           </div>
           <div class="line"></div>
-          <div class="rigth">
+          <div class="right">
             <div class="list">
               <h3>학력사항</h3>
               <p><b>2019.02</b> &nbsp동신대학교 디지털콘텐츠학과 졸업</p>
@@ -195,7 +203,7 @@
           <!--clone--><strong>#웹디자인</strong><span>#자바스크립트</span><strong>#HTML</strong><span>#CSS</span><strong>#피그마</strong><strong>#김지나</strong><span>#1996년생</span><strong>#ENTJ</strong><span>#J빼고_다_50%</span><strong>#모션그래픽</strong><strong>#일러스트레이터</strong><span>#포토샵</span><strong>#프리미어프로</strong><strong>#에프터이펙트</strong><span>#영상편집도_할_줄_알아요</span><strong>#일러스트레이터</strong><span>#그림도_그려요</span>
         </div>
       </div>
-      <img class="deco-bg1" src="img/illust/deco-bg.png"></img>
+      <img class="deco-bg1" src="img/illust/deco-bg.png">
     </section>
     <!--#profile END-->
 
@@ -265,7 +273,7 @@
           </div>
         </div>
       </div>
-      <img class="deco-bg1" src="img/illust/deco-bg.png"></img>
+      <img class="deco-bg1" src="img/illust/deco-bg.png">
     </section>
     <!--#skills END-->
 
@@ -280,9 +288,10 @@
       <div class="container">
         <div class="web-project">
           <h1>Web Project</h1>
-          <ul class="project-wrap">
-            <li class="arrow"><img src="img/icon/works-web-projet-arrow.png" alt="웹프로젝트 화살표"></li>
-            <li class="project-item">
+        </div>
+        <div class="swiper mySwiper">
+          <ul class="swiper-wrapper project-wrap">
+            <li class="swiper-slide project-item">
               <div class="top">
                 <div class="viewport"><img src="img/imgs/web-popol01.png" alt="포폴이미지미리보기1"></div>
                 <div class="viewport-right">
@@ -296,16 +305,9 @@
                     <button type="button">사이트 바로가기</button>
                   </div>
                 </div>
-              </div>
-              <div class="more-text">
-                <div>◆<h1>MORE TEXT</h1>
-                </div>
-                <p class="hide">주재를 손이 것 가능하기 억압받고 제시하다 혼내다. 있다 부족액이 백화점을 비난은 3명 달려가아요. 그러나 그러나 자유다 내밀지만 먼저 하게 삶을 인제를 흘끗
-                  모르다. 준다 도
-                  경기장으로 소프트웨어는 대통령도 누이자 있다.</p>
               </div>
             </li>
-            <li class="project-item">
+            <li class="swiper-slide project-item">
               <div class="top">
                 <div class="viewport"><img src="img/imgs/web-popol01.png" alt="포폴이미지미리보기1"></div>
                 <div class="viewport-right">
@@ -319,56 +321,105 @@
                     <button type="button">사이트 바로가기</button>
                   </div>
                 </div>
-              </div>
-              <div class="more-text">
-                <div>◆<h1>MORE TEXT</h1>
-                </div>
-                <p class="hide">주재를 손이 것 가능하기 억압받고 제시하다 혼내다. 있다 부족액이 백화점을 비난은 3명 달려가아요. 그러나 그러나 자유다 내밀지만 먼저 하게 삶을 인제를 흘끗
-                  모르다. 준다 도
-                  경기장으로 소프트웨어는 대통령도 누이자 있다.</p>
               </div>
             </li>
           </ul>
+          <div class="swiper-button-next"></div>
         </div>
         <!--.web-project END-->
         <div class="popup">
-          <div class="popup-top"><img src="img/icon/close.png" alt="닫음버튼"></div>
+          <div class="popup-bg"></div>
           <div class="popup-wrap">
-            <div class="img-box">
-            <img src="img/imgs/dummy.jpg">
-            </div>
-            <div class="img-box">
-            <img src="img/imgs/dummy.jpg">
-            </div>
-            <div class="img-box">
-            <img src="img/imgs/dummy.jpg">
-            </div>
-            <div class="img-box">
-            <img src="img/imgs/dummy.jpg">
-            </div>
+            <div class="popup-top"><img class="popup-close" src="img/icon/close.png" alt="닫음버튼"></div>
+            <ul class="multiImgUi thumbnail">
+              <li class="img-box"><a href="img/imgs/thumbnail1.png" data-lightbox="thumbnail">
+                  <img src="img/imgs/thumbnail1.png"></a></li>
+              <li class="img-box"><a href="img/imgs/thumbnail2.png" data-lightbox="thumbnail">
+                  <img src="img/imgs/thumbnail2.png"></a></li>
+              <li class="img-box"><a href="img/imgs/thumbnail3.png" data-lightbox="thumbnail">
+                  <img src="img/imgs/thumbnail3.png"></a></li>
+              <li class="img-box"><a href="img/imgs/thumbnail4.png" data-lightbox="thumbnail">
+                  <img src="img/imgs/thumbnail4.png"></a></li>
+              <li class="img-box"><a href="img/imgs/thumbnail5.png" data-lightbox="thumbnail">
+                  <img src="img/imgs/thumbnail5.png"></a></li>
+              <li class="img-box"><a href="img/imgs/thumbnail6.png" data-lightbox="thumbnail">
+                  <img src="img/imgs/thumbnail6.png"></a></li>
+              <li class="img-box"><a href="img/imgs/thumbnail7.png" data-lightbox="thumbnail">
+                  <img src="img/imgs/thumbnail7.png"></a></li>
+              <li class="img-box"><a href="img/imgs/thumbnail8.png" data-lightbox="thumbnail">
+                  <img src="img/imgs/thumbnail8.png"></a></li>
+              <li class="img-box"><a href="img/imgs/thumbnail9.png" data-lightbox="thumbnail">
+                  <img src="img/imgs/thumbnail9.png"></a></li>
+              <li class="img-box"><a href="img/imgs/thumbnail10.png" data-lightbox="thumbnail">
+                  <img src="img/imgs/thumbnail10.png"></a></li>
+              <li class="img-box"><a href="img/imgs/thumbnail11.png" data-lightbox="thumbnail">
+                  <img src="img/imgs/thumbnail11.png"></a></li>
+              <li class="img-box"><a href="img/imgs/thumbnail12.png" data-lightbox="thumbnail">
+                  <img src="img/imgs/thumbnail12.png"></a></li>
+              <li class="img-box"><a href="img/imgs/thumbnail13.png" data-lightbox="thumbnail">
+                  <img src="img/imgs/thumbnail13.png"></a></li>
+            </ul>
+            <ul class="multiImgUi logoDesign">
+              <li class="img-box"><a href="img/imgs/logoDesign1.png" data-lightbox="logoDesign">
+                  <img src="img/imgs/logoDesign1.png"></a></li>
+              <li class="img-box"><a href="img/imgs/logoDesign2.png" data-lightbox="logoDesign">
+                  <img src="img/imgs/logoDesign2.png"></a></li>
+              <li class="img-box"><a href="img/imgs/logoDesign3.png" data-lightbox="logoDesign">
+                  <img src="img/imgs/logoDesign3.png"></a></li>
+              <li class="img-box"><a href="img/imgs/logoDesign4.png" data-lightbox="logoDesign">
+                  <img src="img/imgs/logoDesign4.png"></a></li>
+              <li class="img-box"><a href="img/imgs/logoDesign5.png" data-lightbox="logoDesign">
+                  <img src="img/imgs/logoDesign5.png"></a></li>
+              <li class="img-box"><a href="img/imgs/logoDesign6.png" data-lightbox="logoDesign">
+                  <img src="img/imgs/logoDesign6.png"></a></li>
+              <li class="img-box"><a href="img/imgs/logoDesign7.png" data-lightbox="logoDesign">
+                  <img src="img/imgs/logoDesign7.png"></a></li>
+            </ul>
+            <ul class="multiImgUi oap">
+              <li class="img-box"><a href="img/imgs/dummy.jpg" data-lightbox="oap">
+                  <img src="img/imgs/dummy.jpg"></a></li>
+              <li class="img-box"><a href="img/imgs/dummy.jpg" data-lightbox="oap">
+                  <img src="img/imgs/dummy.jpg"></a></li>
+              <li class="img-box"><a href="img/imgs/dummy.jpg" data-lightbox="oap">
+                  <img src="img/imgs/dummy.jpg"></a></li>
+              <li class="img-box"><a href="img/imgs/dummy.jpg" data-lightbox="oap">
+                  <img src="img/imgs/dummy.jpg"></a></li>
+            </ul>
+            <ul class="multiImgUi MashupCreation">
+              <li class="txt">클릭시 해당 페이지로 이동합니다.</li>
+              <li class="img-box"><a href="https://youtu.be/1mvEbqCxfAk?si=t4b1TT8fQwuQCTzO" target="_blank">
+                  <img src="img/imgs/MashupCreation1.png"></a></li>
+              <li class="img-box"><a href="https://youtu.be/cjUwxYLlpG0?si=ZWPy6dwNGZYgDTdM" target="_blank">
+                  <img src="img/imgs/MashupCreation2.png"></a></li>
+              <li class="img-box"><a href="https://youtu.be/mgueoMTkd8Q?si=WNCg9CVownR0hWwO" target="_blank">
+                  <img src="img/imgs/MashupCreation3.png"></a></li>
+            </ul>
           </div>
         </div>
         <!--.Multimedia-->
         <div class="Multimedia">
           <h1>Multimedia</h1>
           <div class="multi-wrap">
-            <div class="item"><img src=""></div>
           </div>
           <ul class="box-wrap">
             <li class="box">
-              <img src="img/imgs/dummy.jpg" alt="더미">
+              <div class="multi-bg"></div>
+              <div class='imgBox'><img src="img/imgs/dummy.jpg" alt="thumbnail"></div>
               <p>섬네일 제작</p>
             </li>
             <li class="box">
-              <img src="img/imgs/dummy.jpg" alt="더미">
+              <div class="multi-bg"></div>
+              <div class='imgBox'><img src="img/imgs/dummy.jpg" alt="oap"></div>
               <p>OAP 제작</p>
             </li>
             <li class="box">
-              <img src="img/imgs/dummy.jpg" alt="더미">
+              <div class="multi-bg"></div>
+              <div class='imgBox'><img src="img/imgs/dummy.jpg" alt="logoDesign"></div>
               <p>로고 제작</p>
             </li>
-            <li class="box">
-              <img src="img/imgs/dummy.jpg" alt="더미">
+            <li class="box MashupCreation">
+              <div class="multi-bg"></div>
+              <div class='imgBox'><img src="img/imgs/dummy.jpg" alt="MashupCreation"></div>
               <p>매쉬업 영상콘텐츠 제작</p>
             </li>
           </ul>
@@ -383,30 +434,30 @@
             <li class="img-box">
               <img src="img/imgs/dummy.jpg" alt="더미">
             </li>
-            <div class="img-box">
+            <li class="img-box">
               <img src="img/imgs/dummy.jpg" alt="더미">
-            </div>
-            <div class="img-box">
+            </li>
+            <li class="img-box">
               <img src="img/imgs/dummy.jpg" alt="더미">
-            </div>
-            <div class="img-box">
+            </li>
+            <li class="img-box">
               <img src="img/imgs/dummy.jpg" alt="더미">
-            </div>
-            <div class="img-box">
+            </li>
+            <li class="img-box">
               <img src="img/imgs/dummy.jpg" alt="더미">
-            </div>
+            </li>
           </ul>
         </div>
       </div>
       <!--.etc END-->
       <!--#works END-->
-
-      <footer id="footer">
-        <h3>Thank You</h3>
-        <p>© 2025 KimJina. All rights reserved.</p>
-      </footer>
-
+      
     </section>
+
+    <footer id="footer">
+      <h3>Thank You</h3>
+      <p>© 2025 KimJina. All rights reserved.</p>
+    </footer>
   </main>
 </body>
 

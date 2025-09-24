@@ -13,7 +13,7 @@ button{background-color: transparent; border:none; outline: none; cursor: pointe
 }
 /*공통속성*/
 .container{
-  width: 1280px; min-width: 1280px;
+  width: 100%; max-width: 1280px;
   margin: auto;
   padding: 0 40px;
 }

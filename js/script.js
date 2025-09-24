@@ -64,33 +64,63 @@ $(function () {
   //저 이런것좀 합니다 skills
   $('#skills .skill-list .skill').click(function () {
     let index = $(this).index();
-
+    
     $('#skills .skill-list .skill h1, #skills .skill-list .skill .skillpro').removeClass("on");
     $(this).children().addClass("on");
 
     $('#skills .view').removeClass("on");
     $('#skills .view').eq(index).addClass("on");
+
+    $('#skills .view video').each(function () {
+      this.pause();
+      this.currentTime = 0;
+    })
+
+    $('#skills .view').eq(index).find('video')[0].play();
   })
 
-  //작업물 webProject .arrow
-  $('#works .project-wrap .arrow').click(function () {
-    let wrap = $("#works .project-wrap");
-    if (wrap.find(".project-item").is(":animated")) return false;
+  //skill 윈도우 사이즈가 768px가 될 시
+  $(function () {
+    function responsiveWidth() {
+      const windowWidth = $(window).outerWidth();
+      const $views = $('#skills .skills-wrap .view');
+      const $skills = $('#skills .skill-list .skill');
+      const $programImgs = $('.skillpro img');
 
-    let first = wrap.find(".project-item").first();
-    first.animate({ marginLeft: "-100%" }, 400, function () {
-      first.css('marginLeft', '0');
-      wrap.append(first);
+      if (windowWidth < 768) {
+        $views.each(function (i) {
+          if (!$skills.eq(i).find('.view').length) {
+            $($programImgs).hide();
+            $(this).appendTo($skills.eq(i));
+          }
+        });
+
+      } else {
+        const $line = $('#skills .skills-wrap .line');
+        $($programImgs).show();
+        $views.appendTo($line.parent());
+      }
+    }
+
+    responsiveWidth();
+
+    // 창 크기 바뀔 때도 실행
+    $(window).on('resize', function () {
+      responsiveWidth();
     });
-
-    $('#works .project-wrap .project-item .more-text p').addClass('hide');
   });
 
-  //작업물 webProject ,more-text
-  $('#works .project-wrap .project-item .more-text div').click(function () {
-    let index = $(this).index();
-    $('#works .project-wrap .project-item .more-text p').eq(index).toggleClass('hide');
-  })
+
+
+  //swiper라이브러리 #works .web-project
+  var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 20, 
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+    },
+  });
+
 
   //etc 슬라이드
   const imgSlide = document.querySelector("#works .etc .etc-box-wrap");
@@ -112,4 +142,47 @@ $(function () {
     });
   });
 
+})
+
+$(function () {
+  lightbox.option({
+    "resizeDuration": 200,
+    //다른 크기의 이미지 간 전환시 넓이와 높이에 애니메이션 적용시간
+    "wrapAround": true,
+    //마지막 이미지에 도달하면 오른쪽 탐색 화살표가 표시되고 클릭시 세트의 첫번째 이미지로 다시 이동
+    "alwaysShowNavOnTouchDevices": true,
+    //터치를 지원하는 기기에서 마우스를 올리면 표시되는 왼쪽&오른쪽 탐색 화살표가 항상 표시
+    "fadeDuration": 300,
+    //페이드 인 / 페이드 아웃 시간
+  })
+})
+
+//팝업창
+$(function () {
+  $('.Multimedia .box .imgBox').click(function () {
+    $('.popup').show();
+    $('.multiImgUi').hide();
+
+    const altSorse = $(this).children('img').attr('alt');
+    $(`.multiImgUi.${altSorse}`).css('display', 'flex');
+
+    $('.popup-close,.popup-bg').click(function () {
+      $('.popup').hide();
+      $('.multiImgUi').hide();
+    })
+  })
+})
+//작업물 멀티비디어 썸네일 이미지 랜덤으로 넣기
+$(function () {
+  $('.Multimedia .box .imgBox').each(function () {
+    const altSorse = $(this).children('img').attr('alt');
+    const $imgs = $(`.multiImgUi.${altSorse} .img-box img`);
+
+    if ($imgs.length > 0) {
+      const randomIndex = Math.floor(Math.random() * $imgs.length);
+      const randomSrc = $imgs.eq(randomIndex).attr('src');
+
+      $(this).find('img').attr('src', randomSrc);
+    }
+  })
 })
