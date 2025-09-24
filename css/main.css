@@ -1018,6 +1018,7 @@ header aside {
   #works .Multimedia .box-wrap .box{
     position: relative;
     width: 100%;
+    cursor: pointer;
   }
   #works .Multimedia .box-wrap .imgBox{
   border-radius: 20px;
@@ -1025,11 +1026,19 @@ header aside {
   #works .Multimedia .box-wrap .box p{
     position: absolute;
     top:10px; left: 30px;
-    font-size: 20px;
+    font-size: 18px;
+    transition: .5s;
   }
   #works .Multimedia .box-wrap .box .multi-bg{
     position: absolute; inset:0;
     background-color: #00000080;
     border-radius: 20px;
+    transition: .5s;
   }
+  #works .Multimedia .box-wrap .box .multi-bg:hover{
+  opacity: 0;
+  }
+    #works .Multimedia .box-wrap .box:hover p{
+      opacity: 0;
+    }
 }
