@@ -4,7 +4,7 @@ body {
   height: 100%;
   color: #fefefe;
   background-color: #1F2733;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 ::-webkit-scrollbar{
   background-color: #000000;
@@ -23,7 +23,7 @@ body {
   z-index: 999;
   top:50%; right: 0;
   margin-right: 30px;
-  transition: .5s;
+  transition: 1s cubic-bezier(.6,0,.23,.84);
 }
 .menu a{
   display: flex;
@@ -73,7 +73,7 @@ nav.menu-mobile ul{
   box-shadow: 0 0 20px #0f131a71;
   font-size: 15px;
 
-  transition: .5s ease-in-out;
+  transition: 1s cubic-bezier(.6,0,.23,.84);
 }
 nav.menu-mobile ul li{
   text-align: center;
@@ -445,7 +445,7 @@ header aside {
   margin: auto;
   position: relative;
   padding-bottom: 200px;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 #skills .title::before{
   position: absolute;
@@ -1152,7 +1152,8 @@ header aside {
     #programs{transform: scale(0.9);}
     #profile{padding-top:0px; padding-bottom: 0px;}
     #profile .title{transform-origin:left; transform: scale(0.7);}
-    #profile .profile-wrap .left .my-info{transform-origin:center; transform: scale(0.9); transform: translateX(30px);}
+    #profile .profile-wrap{margin: 20px 0;}
+    #profile .profile-wrap .left .my-info{transform-origin:center; transform: scale(0.8);}
     #profile .profile-wrap .left .my-info .text h3{font-size:18px;}
     #profile .profile-wrap .left .my-info .text > p{font-size:15px;}
     #profile .profile-wrap .left > p{font-size:18px}
@@ -1164,5 +1165,9 @@ header aside {
     #works .etc > h1{margin-bottom:40px;}
     #works .etc .swiper-button-prev{left:50px;}
     #works .etc .swiper-button-next{right:50px;}
+  }
+  @media screen and (max-width: 400px) {
+    #profile .profile-wrap .left > p{font-size:16px;}
+    #profile .profile-wrap .right .list{transform: scale(0.9); transform-origin: left;}
   }
 }
