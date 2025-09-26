@@ -894,9 +894,9 @@ header aside {
 }
 
 @media screen and (max-width: 1019px) {
-  ::-webkit-scrollbar{
+  /* ::-webkit-scrollbar{
     display: none;
-  }
+  } */
   /* #intro */
   #intro .intro .title{
     transform: scale(0.8);
