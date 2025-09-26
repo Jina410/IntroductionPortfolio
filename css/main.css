@@ -4,6 +4,7 @@ body {
   height: 100%;
   color: #fefefe;
   background-color: #1F2733;
+  /* overflow-x: hidden; */
 }
 ::-webkit-scrollbar{
   background-color: #000000;
@@ -59,6 +60,35 @@ body {
   transform: translate(0);
 }
 
+/* sidemenu-movile */
+nav.menu-mobile ul{
+  position: fixed;
+  bottom:-100px; left:0; right: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-around;
+  background: #ffa600;
+  color:#1F2733;
+  font-weight: bold;
+  box-shadow: 0 0 20px #0f131a71;
+  font-size: 15px;
+
+  transition: .5s ease-in-out;
+}
+nav.menu-mobile ul li{
+  text-align: center;
+  display: inline;
+  width: 100%; line-height: 50px;
+  transition: .2s;
+  cursor: pointer;
+}
+nav.menu-mobile ul li a{
+  display: block;
+}
+nav.menu-mobile li.on{
+  background-color:#1F2733;
+  color:#fefefe
+}
 /*#intro .footsteps*/
 .footsteps {
   width: 400px;
@@ -189,6 +219,7 @@ header aside {
   font-size: 20px;
   margin-bottom: 90px;
   user-select: none;
+  transition: .5s;
 }
 #programs .inner{
   max-width: 1280px;
@@ -236,10 +267,11 @@ header aside {
 }
 #profile .title{
   position: relative;
-  width: 100%; min-width: 768px;
+  width: 100%;
   display: flex;
   align-items: flex-end;
   transition: .5s;
+  text-wrap: nowrap;
 }
 #profile .title h1{
   font-size: 40px;
@@ -297,7 +329,7 @@ header aside {
   position: absolute;
   left:8px; top:8px; 
   border-radius: 50%;
-  border:1px solid rgba(255, 255, 255, 0.3);
+  border:1px solid rgba(39, 39, 39, 0.3);
   object-fit: center/cover;
   display: block;
 }
@@ -460,7 +492,7 @@ header aside {
   font:bold 44px "Pretendard";
   margin-right: 23px;
 }
-#skills .skill-list .skill:hover h1{
+#skills .skill-list .skill:hover > h1{
   color:#E0A847;
   cursor: pointer;
   user-select: none;
@@ -573,6 +605,7 @@ header aside {
   gap:50px;
   pointer-events: none;
   padding-bottom:150px;
+  transition: .5s;
 }
 .popup .popup-wrap .multiImgUi.thumbnail,
 .popup .popup-wrap .multiImgUi.logoDesign,
@@ -592,15 +625,16 @@ header aside {
   object-fit: cover;
   object-position: center;
 }
-.popup .popup-wrap .multiImgUi.MashupCreation .img-box{
-  width: 100%; max-width: 1500px;
-  padding: 0 20px;
-}
 .popup .popup-wrap .multiImgUi.MashupCreation{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.popup .popup-wrap .multiImgUi.MashupCreation .img-box{
+  width: 100%; max-width: 1500px;
+  padding: 0 20px;
+  transition: .5s;
 }
 .popup .popup-wrap .multiImgUi.MashupCreation li{
   padding-top:30px;
@@ -710,7 +744,7 @@ header aside {
 #works .project-wrap .project-item .top .viewport-right .viewport-btn button:hover{
   background-color: #ffffff;
 }
-#works .swiper-button-next{
+#works .mySwiper .swiper-button-next{
   position: absolute;
   top:50%;
   transform: translateY(-50%);
@@ -767,8 +801,8 @@ header aside {
 
 /* works .etc */
 #works .etc{
-  height: 850px;
-  overflow: hidden;
+  position: relative;
+  padding-bottom:200px;
 }
 #works .etc > h1{
   font:bold 42px "Pretendard";
@@ -777,47 +811,56 @@ header aside {
   margin:107px 0;
   transition: .5s;
 }
-#works .wrap{
-  display: flex;
-  flex-direction: row;
-}
 #works .etc .etc-box-wrap{
   width: fit-content;
   display: flex;
   flex-direction: row;
+  transition-timing-function: linear !important;
 }
-#works .etc .etc-box-wrap.origin{
-  animation: etcSlideMoveOrigin 40s linear infinite;
-}
-#works .etc .etc-box-wrap.clone{
-  animation: etcSlideMoveClone 40s linear infinite;
-}
-
-@keyframes etcSlideMoveOrigin{
-  0%{transform: translateX(0%);}
-  50%{transform: translateX(-100%);}
-  50.01%{transform: translateX(100%);}
-  100%{transform: translateX(0%);}
-}
-@keyframes etcSlideMoveClone{
-  0%{transform: translateX(0%);}
-  100%{transform: translateX(-200%);}
+#works .etc .swiper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
-
-#works .etc .etc-box-wrap .img-box{
-  width: 390px; height: 328px;
-  margin-left:30px;
-  overflow: hidden;
+#works .etc .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 328px ; height: 328px;
   transition: .3s;
 }
-#works .etc .etc-box-wrap .img-box:hover{
-  transform: scale(1.2);
-  box-shadow: 0 0 40px #1A212B;
-}
-#works .etc .etc-box-wrap .img-box img{
+#works .etc .swiper-slide a {
   width: 100%; height: 100%;
+  object-fit: cover;
 }
+
+#works .etc .swiper-slide img {
+  display: block;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+#works .swiper-pagination{
+  display: none;
+  position: absolute;
+  bottom:100px;
+}
+#works .etc .swiper-pagination-bullet{
+  background-color:#FFA600;
+}
+#works .etc .swiper-button-prev,
+#works .etc .swiper-button-next{
+  display: none;
+  color:#FFA600;
+  transform: scale(0.7);
+  position: absolute;
+  top:340px;
+}
+#works .etc .swiper-button-prev{left:150px;}
+#works .etc .swiper-button-next{right:150px;}
 
 /* #footer */
 #footer{
@@ -826,6 +869,7 @@ header aside {
   color:#000000;
   text-align: center;
   padding-top:75px;
+  transition: .5s;
 }
 #footer h3{
   font: bold 18px "Pretendard";
@@ -834,6 +878,8 @@ header aside {
 #footer p{
   font: 400 16px "Pretendard";
 }
+
+
 
 
 
@@ -848,6 +894,9 @@ header aside {
 }
 
 @media screen and (max-width: 1019px) {
+  ::-webkit-scrollbar{
+    display: none;
+  }
   /* #intro */
   #intro .intro .title{
     transform: scale(0.8);
@@ -909,17 +958,19 @@ header aside {
     transform: scale(0.9);
     transform-origin: left;
   } */
-
   #works .Multimedia .box-wrap{
     gap:40px 30px;
   }
 
+  #works .etc .swiper-slide {
+    width: 250px ; height: 250px;
+  }
+
+
+
 }
 @media screen and (max-width: 767px) {
   /* 사이드 고정메뉴 */
-  nav.menu{
-    top:10%;
-  }
   header aside{
     font-size:16px;
   }
@@ -948,6 +999,13 @@ header aside {
   #profile .title, #skills .title{
     transform-origin:left;
     transform: scale(0.8);
+  }
+  /* popup */
+  .popup .popup-wrap .multiImgUi{
+    min-width: 400px;
+  }
+  .popup .popup-wrap .multiImgUi.MashupCreation{
+    gap:20px;
   }
   /* skills */
     #skills .skill-list .skill .skillpro.on {
@@ -985,16 +1043,17 @@ header aside {
     transform: scale(0.8);
   }
   #works .works-tilte h1::before{top:-48px;}
-  #works .web-project > h1, #works .Multimedia > h1, #works .etc > h1{
+  #works .web-project > h1{
     font-size:35px;
-    margin:60px 0;
+    margin-top:100px;
+    margin-bottom: 40px;
   }
   #works .Multimedia > h1{
     margin-top:140px;
     margin-bottom: 40px;
   }
   #works .etc > h1{
-    margin-top:0px;
+    margin-bottom:40px;
   }
   #works .project-wrap .project-item .top{
     flex-direction: column;
@@ -1011,7 +1070,7 @@ header aside {
   #works .project-wrap .project-item .top .viewport-right .viewport-btn button:nth-of-type(1){margin-right: 15px;}
   #works .project-wrap .project-item .top .viewport{max-width: 700px;}
   #works .project-wrap .project-item .top .viewport-right{transform: translateX(1px);}
-  #works .swiper-button-next{top:85%; right: 0px;}
+  #works .mySwiper .swiper-button-next{top:90%; right: 0px;}
 
   #works .etc{height: 450px;}
 
@@ -1025,20 +1084,53 @@ header aside {
 }
   #works .Multimedia .box-wrap .box p{
     position: absolute;
-    top:10px; left: 30px;
+    bottom:25px; left: 30px;
     font-size: 18px;
     transition: .5s;
   }
+  #works .Multimedia .box-wrap .box:hover p{
+    font-weight: bold;
+    opacity: 0;
+  }
   #works .Multimedia .box-wrap .box .multi-bg{
+    pointer-events:none;
     position: absolute; inset:0;
-    background-color: #00000080;
-    border-radius: 20px;
+    background: linear-gradient(1deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.34) 100%);
+    border-radius: 19px;
     transition: .5s;
   }
-  #works .Multimedia .box-wrap .box .multi-bg:hover{
-  opacity: 0;
+  #works .Multimedia .box-wrap .box:hover .multi-bg{
+    opacity: 0;
   }
-    #works .Multimedia .box-wrap .box:hover p{
-      opacity: 0;
-    }
+  #works .etc .swiper-slide {
+    width: 200px ; height: 200px;
+  }
+  #works .swiper-pagination,
+  #works .etc .swiper-button-prev,
+  #works .etc .swiper-button-next{display: block;}
+}
+@media screen and (max-width: 540px) {
+  /* 사이드 고정메뉴 */
+  nav.menu{
+    right:-400px;
+  }
+  nav.menu-mobile ul{
+    bottom:0;
+  }
+  /* 프로그램 */
+  #programs{
+    margin-bottom:140px;
+  }
+  /* 푸터 */
+  #footer{
+    height: 230px;
+  }
+  /* popup */
+  .popup .popup-wrap .multiImgUi{
+    min-width: 500px;
+    gap:30px;
+  }
+  .popup .popup-wrap .multiImgUi.MashupCreation .img-box{
+    width: 90%;
+  }
 }

@@ -33,6 +33,28 @@ $(function () {
     });
   });
 
+  //해당 #으로 갈시 사이드메뉴 on -모바일버전
+  $(document).ready(function () {
+    const sections = $(".menu-mobile li").map(function () {
+      return $($(this).find('a').attr("href"));
+    });
+
+    $(window).on("scroll", function () {
+      let scrollPos = $(window).scrollTop() + $(window).height() / 2;
+
+      sections.each(function (index, section) {
+        let top = $(section).offset().top;
+        let bottom = top + $(section).outerHeight();
+
+        if (scrollPos >= top && scrollPos < bottom) {
+          $(".menu-mobile ul li").removeClass("on");
+          $(".menu-mobile ul li").eq(index).addClass("on");
+          return false;
+        }
+      });
+    });
+  });
+
   //저는 이런사람입니다 aboutme 해당 스크롤에 오면 .photo.rotate @profileRotate재생
   $(window).on("scroll", function () {
     let scrollTop = $(window).scrollTop(); //스크롤 세로top값 취득
@@ -64,7 +86,7 @@ $(function () {
   //저 이런것좀 합니다 skills
   $('#skills .skill-list .skill').click(function () {
     let index = $(this).index();
-    
+
     $('#skills .skill-list .skill h1, #skills .skill-list .skill .skillpro').removeClass("on");
     $(this).children().addClass("on");
 
@@ -114,7 +136,7 @@ $(function () {
 
   //swiper라이브러리 #works .web-project
   var swiper = new Swiper(".mySwiper", {
-    spaceBetween: 20, 
+    spaceBetween: 20,
     loop: true,
     navigation: {
       nextEl: ".swiper-button-next",
@@ -122,38 +144,37 @@ $(function () {
   });
 
 
-  //etc 슬라이드
-  const imgSlide = document.querySelector("#works .etc .etc-box-wrap");
+  // //etc 슬라이드
+  // const imgSlide = document.querySelector("#works .etc .etc-box-wrap");
 
-  const clone = imgSlide.cloneNode(true);
-  document.querySelector("#works .wrap").appendChild(clone);
-  document.querySelector("#works .etc .etc-box-wrap").offsetWidth + "px";
+  // const clone = imgSlide.cloneNode(true);
+  // document.querySelector("#works .wrap").appendChild(clone);
+  // document.querySelector("#works .etc .etc-box-wrap").offsetWidth + "px";
 
-  imgSlide.classList.add("origin");
-  clone.classList.add("clone");
+  // imgSlide.classList.add("origin");
+  // clone.classList.add("clone");
 
-  $(function () {
-    $("#works .wrap").on("mouseenter", function () {
-      $("#works .etc .etc-box-wrap").css("animation-play-state", "paused");
-    });
+  // $(function () {
+  //   $("#works .wrap").on("mouseenter", function () {
+  //     $("#works .etc .etc-box-wrap").css("animation-play-state", "paused");
+  //   });
 
-    $("#works .wrap").on("mouseleave", function () {
-      $("#works .etc .etc-box-wrap").css("animation-play-state", "running");
-    });
-  });
+  //   $("#works .wrap").on("mouseleave", function () {
+  //     $("#works .etc .etc-box-wrap").css("animation-play-state", "running");
+  //   });
+  // });
 
 })
 
 $(function () {
   lightbox.option({
     "resizeDuration": 200,
-    //다른 크기의 이미지 간 전환시 넓이와 높이에 애니메이션 적용시간
     "wrapAround": true,
-    //마지막 이미지에 도달하면 오른쪽 탐색 화살표가 표시되고 클릭시 세트의 첫번째 이미지로 다시 이동
     "alwaysShowNavOnTouchDevices": true,
-    //터치를 지원하는 기기에서 마우스를 올리면 표시되는 왼쪽&오른쪽 탐색 화살표가 항상 표시
     "fadeDuration": 300,
-    //페이드 인 / 페이드 아웃 시간
+    "positionFromTop": 200,
+    "fitImagesInViewport": true,
+    "disableScrolling": true
   })
 })
 
@@ -172,6 +193,7 @@ $(function () {
     })
   })
 })
+
 //작업물 멀티비디어 썸네일 이미지 랜덤으로 넣기
 $(function () {
   $('.Multimedia .box .imgBox').each(function () {
@@ -186,3 +208,46 @@ $(function () {
     }
   })
 })
+
+//#works .etc 스와이퍼 설정
+$(function () {
+  var swiper = new Swiper(".mySwiper2", {
+    // init: true,
+    // initialSlide: 0,
+    direction: 'horizontal',
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    slidesPerView: 'auto',
+    spaceBetween: 15,
+    loop: true,
+    speed: 0,
+    // freeMode: true,
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: true,
+      // reverseDirection: true,
+    },
+    grabCursor: true,
+    breakpoints: {
+      0: {
+        autoplay: {
+          delay: 3000,
+        },
+        // freeMode: false,
+        speed: 300,
+      },
+      768: {
+        spaceBetween: 30,
+        speed: 3000,
+      },
+    },
+    // debugger: true,
+
+  })
+});
