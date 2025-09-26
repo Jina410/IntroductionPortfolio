@@ -4,7 +4,7 @@ body {
   height: 100%;
   color: #fefefe;
   background-color: #1F2733;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 ::-webkit-scrollbar{
   background-color: #000000;
@@ -1134,6 +1134,11 @@ header aside {
   }
   .popup .popup-wrap .multiImgUi.MashupCreation .img-box{
     width: 90%;
+  }
+  @media screen and (max-width: 500px) {
+    #skills .skill-list{
+      padding: 0 20px;
+    }
   }
   @media screen and (max-width: 499px) {
     #intro .intro .title {
