@@ -1141,6 +1141,9 @@ header aside {
     }
   }
   @media screen and (max-width: 499px) {
+    #skills .skill-list{
+      padding: 0 0px;
+    }
     #intro .intro .title {
       transform: scale(0.55);
       transform-origin: left;
@@ -1148,9 +1151,13 @@ header aside {
     }
     #programs{transform: scale(0.9);}
     #profile{padding-top:0px; padding-bottom: 0px;}
-    #profile .profile-wrap{margin: 0px 0; transform-origin:left; transform: scale(0.9);}
     #profile .title{transform-origin:left; transform: scale(0.7);}
     #profile .profile-wrap .left .my-info{transform-origin:center; transform: scale(0.9); transform: translateX(30px);}
+    #profile .profile-wrap .left .my-info .text h3{font-size:18px;}
+    #profile .profile-wrap .left .my-info .text > p{font-size:15px;}
+    #profile .profile-wrap .left > p{font-size:18px}
+    #profile .profile-wrap .right .list h3{font-size: 18px}
+    #profile .profile-wrap .right .list p{font-size: 15px}
 
     #skills{transform-origin:left; transform: scale(0.9);padding-bottom: 100px;}
     #works .Multimedia{margin-bottom: 100px;}
