@@ -980,7 +980,7 @@ header aside {
   }
   /* #intro */
   #intro .intro .title{
-    transform: scale(0.7) translateX(-40px);
+    transform: scale(0.7) translateX(0px);
     transform-origin: left;
   }
   #intro .intro .title p{
@@ -988,6 +988,7 @@ header aside {
     text-align: right;
   }
   /* #profile */
+  #profile{padding-top:0px; padding-bottom: 0px;}
   #profile .profile-wrap .left{
     width: 100%;
     display: flex;
@@ -1134,7 +1135,7 @@ header aside {
   .popup .popup-wrap .multiImgUi.MashupCreation .img-box{
     width: 90%;
   }
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 499px) {
     #intro .intro .title {
       transform: scale(0.55);
       transform-origin: left;
@@ -1150,6 +1151,6 @@ header aside {
     #works .Multimedia{margin-bottom: 100px;}
     #works .etc > h1{margin-bottom:40px;}
     #works .etc .swiper-button-prev{left:50px;}
-#works .etc .swiper-button-next{right:50px;}
+    #works .etc .swiper-button-next{right:50px;}
   }
 }
