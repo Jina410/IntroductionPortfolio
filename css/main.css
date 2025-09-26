@@ -445,7 +445,7 @@ header aside {
   margin: auto;
   position: relative;
   padding-bottom: 200px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 #skills .title::before{
   position: absolute;
@@ -1110,6 +1110,7 @@ header aside {
   #works .etc .swiper-button-next{display: block;}
 }
 @media screen and (max-width: 540px) {
+  header aside {margin-top: 20px;}
   /* 사이드 고정메뉴 */
   nav.menu{
     right:-400px;
@@ -1132,5 +1133,23 @@ header aside {
   }
   .popup .popup-wrap .multiImgUi.MashupCreation .img-box{
     width: 90%;
+  }
+  @media screen and (max-width: 500px) {
+    #intro .intro .title {
+      transform: scale(0.55);
+      transform-origin: left;
+      right: -250px;
+    }
+    #programs{transform: scale(0.9);}
+    #profile{padding-top:0px; padding-bottom: 0px;}
+    #profile .profile-wrap{margin: 0px 0; transform-origin:left; transform: scale(0.9);}
+    #profile .title{transform-origin:left; transform: scale(0.7);}
+    #profile .profile-wrap .left .my-info{transform-origin:center; transform: scale(0.9); transform: translateX(30px);}
+
+    #skills{transform-origin:left; transform: scale(0.9);padding-bottom: 100px;}
+    #works .Multimedia{margin-bottom: 100px;}
+    #works .etc > h1{margin-bottom:40px;}
+    #works .etc .swiper-button-prev{left:50px;}
+#works .etc .swiper-button-next{right:50px;}
   }
 }
