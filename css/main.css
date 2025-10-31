@@ -701,8 +701,9 @@ header aside {
   scrollbar-color: #1F2733 #FFA600 ;
 }
 #works .project-wrap .project-item .top .viewport img{
-  width: 100%;
+  width: 100%; 
 }
+
 #works .project-wrap .project-item .top .viewport-text{
   width: 100%;
   min-width: 350px;
@@ -729,10 +730,14 @@ header aside {
   color:#1f2733;
   font-weight: bold;
   font-size: 20px;
-  padding: 2% 5%;
   background-color: #ffa600;
 
   transition: .3s;
+}
+#works .project-wrap .project-item .top .viewport-right .viewport-btn a{
+  display: inline-block;
+  width: 100%; height: 100%;
+  padding: 2% 5%;
 }
 #works .project-wrap .project-item .top .viewport-right .viewport-btn button:nth-of-type(1){
   width: 35%; 
@@ -818,12 +823,13 @@ header aside {
   transition-timing-function: linear !important;
 }
 #works .etc .swiper {
-  width: 100%;
+  width: 100%; 
   display: flex;
   flex-direction: row;
 }
 
 #works .etc .swiper-slide {
+  width: 100%; height: auto;
   text-align: center;
   font-size: 18px;
   background: #444;
@@ -840,7 +846,7 @@ header aside {
 
 #works .etc .swiper-slide img {
   display: block;
-  width: 100%; height: 100%;
+  width: 100%;  height: 100%;
   object-fit: cover;
 }
 #works .swiper-pagination{

@@ -219,35 +219,114 @@ $(function () {
       el: '.swiper-pagination',
       clickable: true,
     },
+    slidesPerView: 3,
+    spaceBetween: 10,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    slidesPerView: 'auto',
-    spaceBetween: 15,
-    loop: true,
-    speed: 0,
-    // freeMode: true,
     autoplay: {
-      delay: 0,
+      delay: 2000,
       disableOnInteraction: true,
-      // reverseDirection: true,
     },
-    grabCursor: true,
     breakpoints: {
-      0: {
+      640: {
+        slidesPerView: 4,
+        spaceBetween: 20,
         autoplay: {
-          delay: 3000,
+          delay: 2000,
+          disableOnInteraction: true,
         },
-        // freeMode: false,
-        speed: 300,
       },
       768: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: true,
+        },
+      },
+      900: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: true,
+        },
+      },
+      1100: {
+        slidesPerView: 4,
         spaceBetween: 30,
-        speed: 3000,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: true,
+        },
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: true,
+        },
+      },
+      1400: {
+        slidesPerView: 5,
+        spaceBetween: 20,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: true,
+        },
       },
     },
     // debugger: true,
-
+    loop: true,
   })
 });
+
+
+
+
+
+// //#works .etc 스와이퍼 설정
+// $(function () {
+//   var swiper = new Swiper(".mySwiper2", {
+//     // init: true,
+//     // initialSlide: 0,
+//     direction: 'horizontal',
+//     pagination: {
+//       el: '.swiper-pagination',
+//       clickable: true,
+//     },
+//     navigation: {
+//       nextEl: '.swiper-button-next',
+//       prevEl: '.swiper-button-prev',
+//     },
+//     slidesPerView: 'auto',
+//     spaceBetween: 15,
+//     loop: true,
+//     speed: 0,
+//     // freeMode: true,
+//     autoplay: {
+//       delay: 0,
+//       disableOnInteraction: true,
+//       // reverseDirection: true,
+//     },
+//     grabCursor: true,
+//     breakpoints: {
+//       0: {
+//         autoplay: {
+//           delay: 3000,
+//         },
+//         // freeMode: false,
+//         speed: 300,
+//       },
+//       768: {
+//         spaceBetween: 30,
+//         speed: 3000,
+//       },
+//     },
+//     // debugger: true,
+
+//   })
+// });
