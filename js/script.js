@@ -4,7 +4,7 @@ $(function () {
   //header
   $(window).scroll(function () {
     let st = $(window).scrollTop();
-    if (st > 1000) {
+    if (st > 200) {
       $("header").css("opacity", "0");
     } else {
       $("header").css("opacity", "1");
@@ -140,6 +140,10 @@ $(function () {
     loop: true,
     navigation: {
       nextEl: ".swiper-button-next",
+    },
+    pagination: {
+      el: "#works .swiper-wrap .works-swiper-pagination",
+      type: "progressbar",
     },
   });
 

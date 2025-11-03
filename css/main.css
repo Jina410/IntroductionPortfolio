@@ -152,6 +152,7 @@ nav.menu-mobile li.on{
   align-content: space-between;
 }
 header{
+  user-select: none;
   position: fixed;
   width: 100%;
   display: flex;
@@ -483,10 +484,36 @@ header aside {
   margin: 100px 0;
   transition: .5s;
 }
-
+#skills .skill-list{
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+}
 #skills .skill-list .skill h1{
+  position: relative;
   color:#fefefe;
   font:300 20px "Pretendard";
+  margin-bottom:40px;
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+#skills .skill-list .skill h1::after{
+  position: absolute;
+  content: "";
+  display: block;
+  inset:-10px -30px;
+  border:1px solid rgba(0, 0, 0, 0.048);
+  border-radius: 50px;
+  border: 1px solid #ffffff0c;
+  background: #ffffff09;
+
+  transition: .6s;
+}
+#skills .skill-list .skill:hover h1:not(.on)::after{
+  outline: 10px solid #ffffff09;
+  background: #ffffff1f;
 }
 #skills .skill-list .skill h1 b{
   font:bold 44px "Pretendard";
@@ -514,6 +541,7 @@ header aside {
   color: #e0a847;
   font-weight: 500;
 }
+
 #skills .skill-list .skill .skillpro.on {
   height: 90px;
 }
@@ -624,6 +652,26 @@ header aside {
   width: 100%; height: 100%;
   object-fit: cover;
   object-position: center;
+  transition: .2s;
+}
+.popup .popup-wrap .img-box:hover img{
+  transform: scale(1.01);
+}
+.popup .popup-wrap .img-box{
+  position: relative;
+}
+.popup .popup-wrap .img-box::after{
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: url(../img/icon/zoomin.png) no-repeat center #0000009a;
+  opacity: 0;
+  transition: .4s;
+}
+.popup .popup-wrap .img-box:hover::after{
+  opacity: 1;
+  pointer-events: none;
 }
 .popup .popup-wrap .multiImgUi.MashupCreation{
   display: flex;
@@ -754,6 +802,30 @@ header aside {
   top:50%;
   transform: translateY(-50%);
   color:#E0A847;
+
+  transition: .3s;
+}
+#works .mySwiper .swiper-button-next:hover{
+  color: #f1ece3
+}
+#works .swiper-wrap {
+  position: relative;
+  user-select: none;
+}
+#works .swiper-wrap .works-swiper-pagination {
+  width: 100%; max-width: 1030px;
+  height: 4px;
+  position: absolute;
+  z-index: 100;
+  bottom: -20px;
+  top: auto; right: 0; left:50%;
+  transform: translateX(-50%);
+}
+#works .swiper-wrap .swiper-pagination-horizontal {
+  background: #ffa60025;
+}
+#works .swiper-wrap .swiper-pagination-horizontal .swiper-pagination-progressbar-fill {
+  background: #ffa60079;
 }
 /* works .Multimedia */
 #works .Multimedia{
@@ -789,10 +861,14 @@ header aside {
   background-color: #707272;
 }
 #works .Multimedia .box-wrap .box img{
-  
   display: block;
   width: 100%; height: 100%;
   object-fit: cover;
+
+  transition: .2s;
+}
+#works .Multimedia .box-wrap .box:hover img{
+  transform: scale(1.05);
 }
 #works .Multimedia .box-wrap .box.MashupCreation img{
   object-position: left;
@@ -829,6 +905,8 @@ header aside {
 }
 
 #works .etc .swiper-slide {
+  position: relative;
+  overflow: hidden;
   width: 100%; height: auto;
   text-align: center;
   font-size: 18px;
@@ -848,9 +926,25 @@ header aside {
   display: block;
   width: 100%;  height: 100%;
   object-fit: cover;
+  transition: .2s;
+}
+#works .etc .swiper-slide:hover img {
+  transform: scale(1.1);
+}
+#works .etc .swiper-slide::after{
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: url(../img/icon/zoomin.png) no-repeat center #0000009a;
+  opacity: 0;
+  transition: .4s;
+}
+#works .etc .swiper-slide:hover::after{
+  opacity: 1;
+  pointer-events: none;
 }
 #works .swiper-pagination{
-  display: none;
   position: absolute;
   bottom:100px;
 }
@@ -903,7 +997,7 @@ header aside {
     gap:5%;
   }
   #skills .skills-wrap{
-    gap:30px;
+    gap:50px;
   }
 }
 
@@ -1023,6 +1117,14 @@ header aside {
     gap:20px;
   }
   /* skills */
+  #skills .skill-list .skill:hover h1:not(.on)::after{
+    outline:none;
+    background: transparent;
+  }
+  #skills .skill-list .skill h1::after{
+    border: none;
+    background: transparent;
+  }
     #skills .skill-list .skill .skillpro.on {
     height: 0px;
   }
@@ -1120,7 +1222,7 @@ header aside {
   #works .etc .swiper-slide {
     width: 200px ; height: 200px;
   }
-  #works .swiper-pagination,
+  /* #works .swiper-pagination, */
   #works .etc .swiper-button-prev,
   #works .etc .swiper-button-next{display: block;}
 }
