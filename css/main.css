@@ -772,6 +772,7 @@ header aside {
   display: flex;
   width: 100%;
   transition: .5s;
+  gap:5%;
 }
 #works .project-wrap .project-item .top .viewport-right .viewport-btn button{
   margin-top: 14px;
@@ -783,16 +784,13 @@ header aside {
   transition: .3s;
 }
 #works .project-wrap .project-item .top .viewport-right .viewport-btn a{
-  display: inline-block;
+  display: block;
   width: 100%; height: 100%;
-  padding: 2% 5%;
+  padding:5px 20px;
 }
-#works .project-wrap .project-item .top .viewport-right .viewport-btn button:nth-of-type(1){
-  width: 35%; 
-  margin-right: 33px;
-}
-#works .project-wrap .project-item .top .viewport-right .viewport-btn button:nth-of-type(2){
-  width: 65%;
+#works .project-wrap .project-item .top .viewport-right .viewport-btn button{
+  white-space: nowrap;
+  width: auto; 
 }
 #works .project-wrap .project-item .top .viewport-right .viewport-btn button:hover{
   background-color: #ffffff;
@@ -1183,8 +1181,8 @@ header aside {
     line-height: 30px;
     font-size: 16px;
   }
+  #works .project-wrap .project-item .top .viewport-right .viewport-btn a{padding:2px 20px;}
   #works .project-wrap .project-item .top .viewport-right .viewport-btn button{padding: 0.5% 1%;}
-  #works .project-wrap .project-item .top .viewport-right .viewport-btn button:nth-of-type(1){margin-right: 15px;}
   #works .project-wrap .project-item .top .viewport{max-width: 700px;}
   #works .project-wrap .project-item .top .viewport-right{transform: translateX(1px);}
   #works .mySwiper .swiper-button-next{top:90%; right: 0px;}
